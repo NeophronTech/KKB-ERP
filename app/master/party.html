@@ -23,17 +23,34 @@
                                     <thead>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>GSTIN</th>
+                                            <th>PAN</th>
+                                            <th>Area</th>
+                                            <th>State</th>
+                                            <th>Address</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr ng-repeat="person in persons">
-                                            <td>{{ person.Name }}</td>
-                                            <td>{{ person.Position }}</td>
-                                            <td>{{ person.Office }}</td>
-                                            <td>{{ person.Age }}</td>
+                                        <tr ng-repeat="party in parties">
+                                            <td>{{ party.name }}</td>
+                                            <td>{{ party.mail }}</td>
+                                            <td>{{ party.phone }}</td>
+                                            <td>{{ party.gstin }}</td>
+                                            <td>{{ party.pan }}</td>
+                                            <td>{{ party.area }}</td>
+                                            <td>{{ party.state }}</td>
+                                            <td>{{ party.address }}</td>
+                                            <td>
+                                                <button class="btn btn-outline btn-round btn-sm purple" ng-click="editParty(party)">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                                <button  class="btn btn-outline btn-round dark btn-sm black" ng-click="deleteParty(party._id)">
+                                                    <i class="fa fa-trash-o"></i>
+                                                </button>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>

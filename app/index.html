@@ -96,8 +96,27 @@
                                 <li class="dropdown-submenu">
                                     <a href="javascript:;"><i class="fa fa-envelope-o"></i> Accounts </a>
                                     <ul class="dropdown-menu">
-                                        <li><a ui-sref="master.financialYear"><i class="fa fa-bookmark-o"></i> Financial Year </a></li>
+                                        <li>
+                                            <a ui-sref="master.financialYear"><i class="fa fa-bookmark-o"></i> Financial Year </a>
+                                        </li>
                                     </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a ui-sref="orderEntry.orderEntry"></i> Order Entry </a>
+                        </li>
+                        <li class="classic-menu-dropdown">
+                            <a data-close-others="true" data-hover="megamenu-dropdown" href="javascript:;" class="hover-initialized">Delivery Dispatch<i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu pull-left">
+                                <li>
+                                    <a ui-sref="deliveryDispatch.delivery"><i class="fa fa-bookmark-o"></i>Delivery</a>
+                                </li>
+                                <li>
+                                    <a ui-sref="deliveryDispatch.stockBook"><i class="fa fa-bookmark-o"></i>Stock Book</a>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-bookmark-o"></i>Stock Conversion</a>
                                 </li>
                             </ul>
                         </li>
@@ -183,13 +202,27 @@
         <script type="text/javascript" src="app_content/js/plugins/amCharts/amChartsDirective.js"></script>
         <!-- google mape api -->   
         <!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> -->
+
         <!-- Anglar App Script -->
         <script src="app.js"></script>
+
+        <!-- SERVICES -->
+        <script src="app_services/master.service.js"></script>
+        <script src="app_services/deliveryDispatch.service.js"></script>
+
         <!-- CONTROLLER -->
+        <!-- HOME CONTROLLER -->
         <script src="home/dashboard.controller.js"></script>
+        <!-- MASTER CONTROLLER -->
         <script src="master/party.controller.js"></script>
         <script src="master/addParty.controller.js"></script>
         <script src="master/financial.controller.js"></script>
+        <!-- ORDER ENTRY CONTROLLER -->
+        <script src="order_entry/orderEntry.controller.js"></script>
+        <!-- DELIVER DISPATCH CONTROLLER -->
+        <script src="delivery_dispatch/delivery.controller.js"></script>
+        <script src="delivery_dispatch/stockBook.controller.js"></script>
+
         <!-- DIRECTIVES -->
         <script src="app_content/js/directives.js"></script>
         <!-- chart js -->

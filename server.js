@@ -23,6 +23,8 @@ app.use(express.static(path.join(__dirname, 'assets')));
 app.use('/login', require('./controllers/login.controller'));
 app.use('/app', require('./controllers/app.controller'));
 app.use('/api/users', require('./controllers/api/users.controller'));
+app.use('/api/master', require('./controllers/api/master.controller'));
+app.use('/api/deliveryDispatch', require('./controllers/api/deliveryDispatch.controller'));
 
 //Redirect to app controller
 app.get('/',function(req,res){

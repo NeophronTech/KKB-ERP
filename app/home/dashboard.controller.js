@@ -1,6 +1,6 @@
 (function(){
     'use strict';
-     angular.module('AdminUI').controller('Dashboard.IndexController', dashboardController);
+     angular.module('KKB').controller('Dashboard.IndexController', dashboardController);
 
     function dashboardController($scope){
 

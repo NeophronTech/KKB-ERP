@@ -1,5 +1,5 @@
 /**
- * AdminUI - Responsive Admin Theme
+ * KKB - Responsive Admin Theme
  *
  * Main directives.js file
  * Define directives for used plugin
@@ -26,9 +26,9 @@ function pageTitle($rootScope, $timeout) {
         link: function(scope, element) {
             var listener = function(event, toState, toParams, fromState, fromParams) {
                 // Default title - load on Dashboard 1
-                var title = 'AdminUI | Responsive Admin Theme';
+                var title = 'KKB';
                 // Create your own title pattern
-                if (toState.data && toState.data.pageTitle) title = 'AdminUI | ' + toState.data.pageTitle;
+                if (toState.data && toState.data.pageTitle) title = 'KKB | ' + toState.data.pageTitle;
                 $timeout(function() {
                     element.text(title);
                 });
@@ -236,7 +236,7 @@ function slimScroll($timeout){
  * Pass all functions into module
  */
 angular
-    .module('AdminUI')
+    .module('KKB')
     .directive('pageTitle', pageTitle)   
     .directive('iboxTools', iboxTools)
     .directive('sparkline', sparkline)
