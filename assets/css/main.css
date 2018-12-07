@@ -2300,7 +2300,7 @@ Error, Login & Lockscreen
 }
 
 .login-layout-full::before {
- background-image: url("../images/login-bg/kkb_bg1.jpg");
+ background-image: url("../images/login-bg/kkb_bg2.jpg");
  background-position: center top;
  background-size: cover;
  content: "";
