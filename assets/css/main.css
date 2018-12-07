@@ -2289,7 +2289,7 @@ Error, Login & Lockscreen
 }
 
  .login-layout-full::after {
- background-color: rgba(38, 50, 56, 0.6);
+ /*background-color: rgba(38, 50, 56, 0.6);*/
  content: "";
  height: 100%;
  left: 0;
@@ -2300,7 +2300,7 @@ Error, Login & Lockscreen
 }
 
 .login-layout-full::before {
- background-image: url("../images/login-bg/placeholders.jpg");
+ background-image: url("../images/login-bg/kkb_bg1.jpg");
  background-position: center top;
  background-size: cover;
  content: "";
@@ -2660,6 +2660,7 @@ Page Header
 
 .page-header.navbar .page-logo {
     background: #292929 none repeat scroll 0 0;
+
     display: block;
     float: left;
     height: 46px;
