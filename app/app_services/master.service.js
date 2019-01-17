@@ -11,9 +11,26 @@
         masterService.updateParty = updateParty;
 		masterService.deleteParty = deleteParty;
 		masterService.readFinancialYear = readFinancialYear;
+		masterService.readLoggedFinancialYear = readLoggedFinancialYear;
 		masterService.saveFinancialYear = saveFinancialYear;
         masterService.updateFinancialYear = updateFinancialYear;
 		masterService.deleteFinancialYear = deleteFinancialYear;
+		masterService.readState = readState;
+		masterService.saveState = saveState;
+        masterService.updateState = updateState;
+		masterService.deleteState = deleteState;
+		masterService.readLine = readLine;
+		masterService.saveLine = saveLine;
+        masterService.updateLine = updateLine;
+		masterService.deleteLine = deleteLine;
+		masterService.readArea = readArea;
+		masterService.saveArea = saveArea;
+        masterService.updateArea = updateArea;
+		masterService.deleteArea = deleteArea;
+		masterService.readTransport = readTransport;
+		masterService.saveTransport = saveTransport;
+        masterService.updateTransport = updateTransport;
+		masterService.deleteTransport = deleteTransport;
 		
         return masterService;
         
@@ -35,6 +52,10 @@
 
 		function readFinancialYear(obj){
 			return $http.post('/api/master/readFinancialYear', obj).then(handleSuccess, handleError);
+		}
+		
+		function readLoggedFinancialYear(){
+			return $http.get('/api/master/readLoggedFinancialYear', ).then(handleSuccess, handleError);
         }
         
         function saveFinancialYear(obj) {
@@ -47,6 +68,70 @@
 
 		function deleteFinancialYear(obj) {
 			return $http.put('/api/master/deleteFinancialYear', obj).then(handleSuccess, handleError);
+		}
+
+		function readState(obj){
+			return $http.post('/api/master/readState', obj).then(handleSuccess, handleError);
+        }
+        
+        function saveState(obj) {
+			return $http.post('/api/master/saveState', obj).then(handleSuccess, handleError);
+		}
+
+		function updateState(obj) {
+			return $http.put('/api/master/updateState', obj).then(handleSuccess, handleError);
+		}
+
+		function deleteState(obj) {
+			return $http.put('/api/master/deleteState', obj).then(handleSuccess, handleError);
+		}
+
+		function readLine(obj){
+			return $http.post('/api/master/readLine', obj).then(handleSuccess, handleError);
+        }
+        
+        function saveLine(obj) {
+			return $http.post('/api/master/saveLine', obj).then(handleSuccess, handleError);
+		}
+
+		function updateLine(obj) {
+			return $http.put('/api/master/updateLine', obj).then(handleSuccess, handleError);
+		}
+
+		function deleteLine(obj) {
+			return $http.put('/api/master/deleteLine', obj).then(handleSuccess, handleError);
+		}
+
+		function readArea(obj){
+			return $http.post('/api/master/readArea', obj).then(handleSuccess, handleError);
+        }
+        
+        function saveArea(obj) {
+			return $http.post('/api/master/saveArea', obj).then(handleSuccess, handleError);
+		}
+
+		function updateArea(obj) {
+			return $http.put('/api/master/updateArea', obj).then(handleSuccess, handleError);
+		}
+
+		function deleteArea(obj) {
+			return $http.put('/api/master/deleteArea', obj).then(handleSuccess, handleError);
+		}
+
+		function readTransport(obj){
+			return $http.post('/api/master/readTransport', obj).then(handleSuccess, handleError);
+        }
+        
+        function saveTransport(obj) {
+			return $http.post('/api/master/saveTransport', obj).then(handleSuccess, handleError);
+		}
+
+		function updateTransport(obj) {
+			return $http.put('/api/master/updateTransport', obj).then(handleSuccess, handleError);
+		}
+
+		function deleteTransport(obj) {
+			return $http.put('/api/master/deleteTransport', obj).then(handleSuccess, handleError);
 		}
 
         function handleSuccess(res) {

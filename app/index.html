@@ -64,16 +64,16 @@
                                     <a ui-sref="master.party"><i class="fa fa-bookmark-o"></i>Party - Ledger</a>
                                 </li>
                                 <li>
-                                    <a> <i class="fa fa-bookmark-o"></i>Line</a>
+                                    <a ui-sref="master.line"><i class="fa fa-bookmark-o"></i>Line</a>
                                 </li>
                                 <li>
-                                    <a> <i class="fa fa-bookmark-o"></i>Area</a>
+                                    <a ui-sref="master.area"><i class="fa fa-bookmark-o"></i>Area</a>
                                 </li>
                                 <li>
-                                    <a> <i class="fa fa-bookmark-o"></i>State</a>
+                                    <a ui-sref="master.state"><i class="fa fa-bookmark-o"></i>State</a>
                                 </li>
                                 <li>
-                                    <a> <i class="fa fa-bookmark-o"></i>Transport</a>
+                                    <a ui-sref="master.transport"><i class="fa fa-bookmark-o"></i>Transport</a>
                                 </li>
                                 <li>
                                     <a> <i class="fa fa-bookmark-o"></i>Item</a>
@@ -126,6 +126,9 @@
                 <div class="top-menu">
                     <ul class="nav navbar-nav pull-right">
                         <!-- START USER LOGIN DROPDOWN -->
+                        <li>
+                            <a style="color:#fffafa;"></i>{{fyear.name}}</a>
+                        </li>
                         <li class="dropdown dropdown-user">
                             <a data-close-others="true" data-hover="dropdown" data-toggle="dropdown" class="dropdown-toggle" href="javascript:;"> 
                                 <img src="app_content/images/teem/placeholders.jpg" class="img-circle" alt=""> 
@@ -217,6 +220,10 @@
         <script src="master/party.controller.js"></script>
         <script src="master/addParty.controller.js"></script>
         <script src="master/financial.controller.js"></script>
+        <script src="master/state.controller.js"></script>
+        <script src="master/line.controller.js"></script>
+        <script src="master/area.controller.js"></script>
+        <script src="master/transport.controller.js"></script>
         <!-- ORDER ENTRY CONTROLLER -->
         <script src="order_entry/orderEntry.controller.js"></script>
         <!-- DELIVER DISPATCH CONTROLLER -->

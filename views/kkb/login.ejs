@@ -16,6 +16,17 @@
     <% } %>
     <form method="post" action="#">
       <div class="form-group">
+        <select class="form-control" name="finYear">
+            <% financialYear.forEach(function(fy) { 
+              if(fy.status == true){ %>
+                <option selected value="<%= fy._id %>"><%= fy.name %></option>
+              <% } else { %>
+                <option value="<%= fy._id %>"><%= fy.name %></option>
+              <% } 
+            }); %>
+        </select>
+      </div>
+      <div class="form-group">
         <input type="email" class="form-control" name="email" placeholder="Email"  required="true">
       </div>
       <div class="form-group">

@@ -38,6 +38,30 @@
                 controller: 'Master.FinancialYearController',
                 controllerAs: 'vm'
             })
+            .state('master.state', {
+                url: '/state',
+                templateUrl: 'master/state.html',
+                controller: 'Master.StateController',
+                controllerAs: 'vm'
+            })
+            .state('master.line', {
+                url: '/line',
+                templateUrl: 'master/line.html',
+                controller: 'Master.LineController',
+                controllerAs: 'vm'
+            })
+            .state('master.area', {
+                url: '/area',
+                templateUrl: 'master/area.html',
+                controller: 'Master.AreaController',
+                controllerAs: 'vm'
+            })
+            .state('master.transport', {
+                url: '/transport',
+                templateUrl: 'master/transport.html',
+                controller: 'Master.TransportController',
+                controllerAs: 'vm'
+            })
             // ORDER ENTRY
             .state('orderEntry', {
                 url: '/orderEntry',
@@ -73,13 +97,20 @@
         $urlRouterProvider.otherwise("/home");
     }
     
-    function run($http, $window, $rootScope, $state){
+    function run(MasterService, $http, $window, $rootScope, $state){
         $rootScope.$state = $state;
+        $rootScope.fyear = {};
+        $rootScope.fyear.name = new Date().getFullYear();
         $http.defaults.headers.common['Authorization'] = 'Bearer ' + $window.jwtToken;
+        MasterService.readLoggedFinancialYear().then(function(res){
+            if(res.data){
+                $rootScope.fyear = res.data;
+            }
+        });
     }
 
     $(function(){
-        $.get('/app/token', function (token) {
+        $.get('/app/token', function(token){
             window.jwtToken = token;
             angular.bootstrap(document, ['KKB']);
         });

@@ -17,14 +17,14 @@ var masterPartySchema = new Schema({
   sms: {type:String},
   gstin: {type:String},
   pan: {type:String},
-  area: {type:String},
-  state: {type:String},
+  area: {type:Schema.Types.ObjectId, ref:'master_area', autopopulate:{select:'name'}},
+  state: {type:Schema.Types.ObjectId, ref:'master_state', autopopulate:{select:'name'}},
   address: {type:String},
   postal: {type:String},
   contactPerson: {type:String},
   creditLimit: {type:Number},
-  line: {type:String},
-  transport: {type:String},
+  line: {type:Schema.Types.ObjectId, ref:'master_line', autopopulate:{select:'name'}},
+  transport: {type:Schema.Types.ObjectId, ref:'master_transport', autopopulate:{select:'name'}},
   courier: {type:String},
   bookingPlace: {type:String},
   deliveryDays: {type:Number},
@@ -36,12 +36,40 @@ var masterPartySchema = new Schema({
   remark: {type:String},
   active: {type:Boolean}
 }, {versionKey: false});
+masterPartySchema.plugin(autopopulate);
 
 var masterFinancialYearSchema = new Schema({
   name: {type:String},
   from: {type:String},
   to: {type:String},
   status: {type:Boolean},
+  active: {type:Boolean}
+}, {versionKey: false});
+
+var masterStateSchema = new Schema({
+  code: {type:String},
+  name: {type:String},
+  active: {type:Boolean}
+}, {versionKey: false});
+
+var masterLineSchema = new Schema({
+  code: {type:String},
+  name: {type:String},
+  active: {type:Boolean}
+}, {versionKey: false});
+
+var masterAreaSchema = new Schema({
+  code: {type:String},
+  name: {type:String},
+  line: {type:Schema.Types.ObjectId, ref:'master_line', autopopulate:{select:'name'}},
+  active: {type:Boolean}
+}, {versionKey: false});
+masterAreaSchema.plugin(autopopulate);
+
+var masterTransportSchema = new Schema({
+  name: {type:String},
+  phone1: {type:String},
+  phone2: {type:String},
   active: {type:Boolean}
 }, {versionKey: false});
 
@@ -88,6 +116,10 @@ var userModel = connObj.model('user', userSchema, 'user');
 /* MASTER MODEL */
 var masterPartyModel = connObj.model('master_party', masterPartySchema, 'master_party');
 var masterFinancialYearModel = connObj.model('master_financialYear', masterFinancialYearSchema, 'master_financialYear');
+var masterStateModel = connObj.model('master_state', masterStateSchema, 'master_state');
+var masterLineModel = connObj.model('master_line', masterLineSchema, 'master_line');
+var masterAreaModel = connObj.model('master_area', masterAreaSchema, 'master_area');
+var masterTransportModel = connObj.model('master_transport', masterTransportSchema, 'master_transport');
 /* DELIVERY DISPATCH Model */
 var stockBookModel = connObj.model('stockBook', stockBookSchema, 'stockBook');
 var deliveryModel = connObj.model('delivery', deliverySchema, 'delivery');
@@ -98,6 +130,10 @@ schemaService.userModel = userModel;
 /* MASTER */
 schemaService.masterPartyModel = masterPartyModel;
 schemaService.masterFinancialYearModel = masterFinancialYearModel;
+schemaService.masterStateModel = masterStateModel;
+schemaService.masterLineModel = masterLineModel;
+schemaService.masterAreaModel = masterAreaModel;
+schemaService.masterTransportModel = masterTransportModel;
 /* DELIVERY DISPATCH */
 schemaService.stockBookModel = stockBookModel;
 schemaService.deliveryModel = deliveryModel;
