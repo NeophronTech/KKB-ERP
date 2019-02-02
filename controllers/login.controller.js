@@ -1,5 +1,5 @@
 var express=require('express'), router=express.Router(), request=require('request'), config=require('../config.json');
-var masterService = require('services/master.service');
+
 //render login page
 router.get('/', function(req, res){
 	//logout user
@@ -8,16 +8,7 @@ router.get('/', function(req, res){
 	var viewData = {success:req.session.success};
 	delete req.session.success;
 	console.log('inside login.controller GET');
-	masterService.getFinancialYear({active:true}).then(function(retObj){
-		if(retObj){
-			viewData.financialYear = retObj;
-			return res.render('kkb/login', viewData);
-		} else{
-			return res.render('kkb/login', viewData);
-		}
-	}).catch(function(err){
-		return res.render('kkb/login', viewData);
-	});
+	res.render('kkb/login', viewData);
 });
 
 router.post('/', function(req, res){
@@ -38,8 +29,8 @@ router.post('/', function(req, res){
 		}
 		//Save JWT token in the session to make it available to angular app
 		req.session.token = body.token;
-		req.session.fyear = body.fyear;
 		console.log('login.controller - POST - body.token');
+		console.log(req.query);
 		var returnUrl = req.query.returnUrl && decodeURIComponent(req.query.returnUrl) || '/';
 		res.redirect(returnUrl);
 	});

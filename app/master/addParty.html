@@ -76,9 +76,11 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>Area</label>
-                                                <select class="form-control" name="area" ng-model="party.area" ng-required="true">
-                                                    <option value selected disabled>Select Area</option>
-                                                    <option ng-repeat="ars in areas" value="{{ars._id}}">{{ars.name}}</option>
+                                                <select class="form-control" name="area" title="Select Area" ng-model="party.area" ng-required="true">
+                                                    <option>Area 1</option>
+                                                    <option>Area 2</option>
+                                                    <option>Area 3</option>
+                                                    <option>Area 4</option>
                                                 </select>
                                                 <center ng-show="submitted && partyForm.area.$error.required"><p class="help-block text-navy">This is required field</p></center>
                                             </div>
@@ -86,9 +88,11 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>State</label>
-                                                <select class="form-control" name="state" ng-model="party.state" ng-required="true">
-                                                    <option value selected disabled>Select State</option>
-                                                    <option ng-repeat="sts in states" value="{{sts._id}}">{{sts.name}}</option>
+                                                <select class="form-control" name="state" title="Select State" ng-model="party.state" ng-required="true">
+                                                    <option>State 1</option>
+                                                    <option>State 2</option>
+                                                    <option>State 3</option>
+                                                    <option>State 4</option>
                                                 </select>
                                                 <center ng-show="submitted && partyForm.state.$error.required"><p class="help-block text-navy">This is required field</p></center>
                                             </div>
@@ -136,9 +140,11 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>Line</label>
-                                                <select class="form-control" name="line" ng-model="party.line" ng-required="true">
-                                                    <option value selected disabled>Select Line</option>
-                                                    <option ng-repeat="lns in lines" value="{{lns._id}}">{{lns.name}}</option>
+                                                <select class="form-control" name="line" title="Select Line" ng-model="party.line" ng-required="true">
+                                                    <option>Line 1</option>
+                                                    <option>Line 2</option>
+                                                    <option>Line 3</option>
+                                                    <option>Line 4</option>
                                                 </select>
                                                 <center ng-show="submitted && partyForm.line.$error.required"><p class="help-block text-navy">This is required field</p></center>
                                             </div>
@@ -146,9 +152,11 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label>Transport</label>
-                                                <select class="form-control" name="transport" ng-model="party.transport" ng-required="true">
-                                                    <option value selected disabled>Select Transport</option>
-                                                    <option ng-repeat="tps in transports" value="{{tps._id}}">{{tps.name}}</option>
+                                                <select class="form-control" name="transport" title="Select Transport" ng-model="party.transport" ng-required="true">
+                                                    <option>Transport 1</option>
+                                                    <option>Transport 2</option>
+                                                    <option>Transport 3</option>
+                                                    <option>Transport 4</option>
                                                 </select>
                                                 <center ng-show="submitted && partyForm.transport.$error.required"><p class="help-block text-navy">This is required field</p></center>
                                             </div>
