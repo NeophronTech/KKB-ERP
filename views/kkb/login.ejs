@@ -1,12 +1,15 @@
 <%- include('./header') %>
   <div class="page-brand-info">
     <div class="brand"> <img class="brand-img" src="/images/w-logo.png" alt="..."></div>
+    <p class="font-size-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
   <div class="loginColumns">
     <div>
       <h1 class="logo-name">KKB</h1>
     </div>
     <h3>Welcome to KKB</h3>
+    <p>fully responsive admin dashboard template built with Bootstrap Framework, HTML5 and CSS3, Media query. </p>
     <p>Login</p>
     <% if(locals.error) { %>
       <div class="alert alert-danger"><%= error %></div>
@@ -22,7 +25,10 @@
         <input type="password" class="form-control" name="password" placeholder="Password" required="true">
       </div>
       <button type="submit" class="btn red block full-width bottom15">Login</button>
+      <a href="app"><small>Forgot password?</small></a>
+      <p class="text-muted text-center"><small>Do not have an account?</small></p>
+      <a href="app" class="btn btn-sm btn-white btn-block">Create an account</a>
     </form>
-    <p class=" copyR"> <small>Neophron Technologies &copy; 2016-2017</small> </p>
+    <p class=" copyR"> <small>NG1 &copy; 2016-2017</small> </p>
   </div>
 <%- include('./footer') %>

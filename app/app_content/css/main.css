@@ -3009,8 +3009,7 @@ Page Sidebar
 .page-content-wrapper .page-content {
     margin-left: 190px;
     margin-top: 0;
-    /* min-height: 1200px; */
-    min-height: 800px;
+    min-height: 1200px;
     padding: 0 10px 10px;
     position: relative;
     transition: all 0.4s ease 0s;
@@ -3471,9 +3470,8 @@ footer
     transition: all 0.4s ease 0s;
 }
 
-.page-sidebar-closed .footer {
-    /* margin-left: 45px; */
-    margin-left: 0px;
+.page-sidebar-closed .footer {   
+    margin-left: 45px;
 }
 
 .page-footer-fixed .footer {
