@@ -2666,8 +2666,7 @@ Page Header
 }
 
 .page-header.navbar .page-logo {
-    /*background: #292929 none repeat scroll 0 0;*/
-    background: #e0d8d8  none repeat scroll 0 0;
+    background: #292929 none repeat scroll 0 0;
     display: block;
     float: left;
     height: 46px;
